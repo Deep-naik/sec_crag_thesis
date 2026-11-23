@@ -1,0 +1,402 @@
+[
+  {
+    "id": "Q01",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "Which customer does Apple identify as a member of Credit Concentration Risk in its 2025-09-27 filing?",
+    "ground_truth": "Customer One",
+    "reference_context": "2025-09-27 0000320193 aapl:MarketableDebtSecuritiesOtherThanAssetBackedSecuritiesMember 2026-09-26 0000320193 us-gaap:AssetBackedSecuritiesMember 2026-09-26 0000320193 us-gaap:ForeignExchangeContractMember 2025-09-28 2026-09-26 0000320193 us-gaap:CrossCurrencyInterestRateContractMember 2025-09-28 2026-09-26 0000320193 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:ForeignExchangeContractMember 2026-09-26 0000320193 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:ForeignExchangeContractMember 2025-09-27 0000320193 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:InterestRateContractMember 2026-09-26 0000320193 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:InterestRateContractMember 2025-09-27 0000320193 us-gaap:NondesignatedMember us-gaap:ForeignExchangeContractMember 2026-09-26 0000320193 us-gaap:NondesignatedMember us-gaap:ForeignExchangeContractMember 2025-09-27 0000320193 us-gaap:CreditConcentrationRiskMember us-gaap:TradeAccountsReceivableMember 2026-09-26 0000320193 us-gaap:CreditConcentrationRiskMember us-gaap:TradeAccountsReceivableMember 2025-09-27 0000320193 us-gaap:CreditConcentrationRiskMember aapl:CustomerOneMember us-gaap:TradeAccountsReceivableMember 2025-09-28 2026-09-26 0000320193 us-gaap:CreditConcentrationRiskMember aapl:CustomerOneMember us-gaap:TradeAccountsReceivableMember 2024-09-29 2025-09-27 0000320193 us-gaap:CreditConcentrationRiskMember aapl:CellularNetworkCarriersMember us-gaap:TradeAccountsReceivableMember 2025-09-28 2026-09-26"
+  },
+  {
+    "id": "Q02",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What team does Apple have that manages information security risks through its supplier relationships?",
+    "ground_truth": "Supplier Trust team",
+    "reference_context": ".  A dedicated Supplier Trust team manages information security risks the Company is exposed to through its supplier relationships. The Company has processes to log, track, address, and escalate for further assessment and report, as appropriate, cybersecurity incidents across the Company and its suppliers to senior management and the Audit and Finance Committee (\u201cAudit Committee\u201d) of the Board.   The Company\u2019s enterprise risk management program  is designed to identify, asse ss, and monitor the Company\u2019s business risks, including financial, operational, compliance and reputational risks, and reflects management\u2019s assessment of cybersecurity risks. The Audit Committee assists the Board in the oversight and monitoring of cybersecurity matters.   The Audit Committee regularly reviews and discusses the Company\u2019s cybersecurity risks with management , including the Company\u2019s Head of Corporate Information Security, its General Counsel and the Heads of Compliance and Business Conduct, Business Assurance, and Internal Audit, and receives updates, as necessary, regarding cybersecurity incidents.  The Chair of the Audit Committee regularly reports the substance of such reviews and discussions to the Board, as necessary, and recommends to the Board such actions as the Audit Committee deems appropriate"
+  },
+  {
+    "id": "Q03",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What company did Microsoft acquire in October 2023?",
+    "ground_truth": "Activision Blizzard, Inc.",
+    "reference_context": ". We may not achieve significant revenue from new product, service, and distribution channel investments for several years, if at all. New products and services may not be profitable or may not achieve operating margins as high as we have experienced historically. We may not get engagement in certain features that drive post-sale monetization opportunities. Our data-handling practices across our products and services will continue to be under scrutiny. Perceptions of mismanagement, driven by regulatory activity or negative public reaction to our practices or product experiences, could negatively impact product and feature adoption. Developing new technologies is complex. It can require long development and testing periods. We could experience significant delays in new releases or significant problems in creating new products or services. These factors could adversely affect our business, financial condition, and results of operations.   Acquisitions, joint ventures, and strategic alliances could have an adverse effect on our business.  We expect to continue making acquisitions and entering into joint ventures and strategic alliances as part of our long-term business strategy. For example, in  October 2023 we completed our acquisition of   Activision Blizzard , Inc. Additionally, we have a long-term strategic partnership with OpenAI"
+  },
+  {
+    "id": "Q04",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "Which countries does Apple rely on for a significant majority of its manufacturing operations?",
+    "ground_truth": "China mainland, India, Japan, South Korea, Taiwan, Vietnam, and the U.S.",
+    "reference_context": ". representing a majority of the Company\u2019s total net sales, and the Company believes that it generally benefits from growth in international trade. A significant majority of the Company\u2019s manufacturing is performed in whole or in part by outsourcing partners located primarily in China mainland, India, Japan, South Korea, Taiwan and Vietnam, in addition to sourcing from partners and facilities located in the U.S. Restrictions on international trade, such as tariffs and other controls on imports or exports of goods, technology or data, can materially adversely affect the Company\u2019s business and supply chain. The impact can be particularly significant if these restrictive measures apply to countries and regions where the Company derives a significant portion of its revenues and/or has significant supply chain operations. Restrictive measures can increase the cost or limit the availability of the Company\u2019s products and the components and rare earths and other raw materials that go into them. Restrictive measures can also require the Company to change suppliers, restructure business relationships and operations, refrain from offering and distributing or cease to offer and distribute affected products, services and third-party applications to its customers, and increase the prices of its products and services"
+  },
+  {
+    "id": "Q05",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What components are included in NVIDIA's Blackwell architecture launched in fiscal year 2025?",
+    "ground_truth": "GPUs, CPUs, DPUs, interconnects, switch chips and systems, and networking adapters.",
+    "reference_context": ". In fiscal year 2025, we launched the NVIDIA Blackwell architecture, a full set of data center scale infrastructure that includes GPUs, CPUs, DPUs, interconnects, switch chips and systems, and networking adapters. Blackwell excels at processing cutting edge generative AI and accelerated computing workloads with market leading performance and efficiency. Offered in a number of configurations, it can address the needs of customers across industries and a diverse set of AI and accelerated computing use cases. Gaming Gaming is the largest entertainment industry, with PC gaming as the predominant platform. Many factors propel its growth, including new high production value games and franchises, the continued rise of competitive gaming, or eSports, social connectivity and the increasing popularity of game streamers, modders, or gamers who remaster games, and creators. Our gaming platforms leverage our GPUs and sophisticated software to enhance the gaming experience with smoother, higher quality graphics. We developed NVIDIA RTX to bring next generation graphics and AI to games. NVIDIA RTX features ray tracing technology for real-time, cinematic-quality rendering. Ray tracing, which has long been used for special effects in the movie industry, is a computationally intensive technique that simulates the physical behavior of light to achieve greater realism in computer-generated scenes"
+  },
+  {
+    "id": "Q06",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What is a significant risk that Apple faces according to the excerpt?",
+    "ground_truth": "Substantial competition from companies with significant technical, marketing, distribution, and other resources, as well as established hardware, software, and service offerings with large customer bases.",
+    "reference_context": ". The Company designs and develops nearly the entire solution for its products, including the hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design and technology innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, corporate reputation, and the ability to effectively protect and enforce the Company\u2019s intellectual property rights. The Company is focused on expanding its market opportunities related to smartphones, personal computers, tablets, wearables and accessories, and services. The Company\u2019s products and services face substantial competition from companies that have significant technical, marketing, distribution and other resources, as well as established hardware, software, and service offerings with large customer bases. In addition, the Company faces significant competition as competitors imitate the Company\u2019s product features and applications within their products to offer more competitive solutions. The Company also expects competition to intensify as competitors imitate the Company\u2019s approach to providing components seamlessly within their offerings or work collaboratively to offer integrated solutions"
+  },
+  {
+    "id": "Q07",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "In what year did Debora Shoquist become Executive Vice President of Operations at NVIDIA?",
+    "ground_truth": "2009",
+    "reference_context": ". Mr. Puri holds a B.S.E.E. degree from the University of Minnesota, an M.S.E.E. degree from the California Institute of Technology and an M.B.A. degree from Harvard Business School. Debora Shoquist  joined NVIDIA in 2007 as Senior Vice President of Operations and in 2009 became Executive Vice President of Operations. Prior to NVIDIA, Ms. Shoquist served from 2004 to 2007 as Executive Vice President of Operations at JDS Uniphase Corp., a provider of communications test and measurement solutions and optical products for the telecommunications industry. She served from 2002 to 2004 as Senior Vice President and General Manager of the Electro-Optics business at Coherent, Inc., a manufacturer of commercial and scientific laser equipment. Previously, she worked at Quantum Corp., a data protection company, as President of the Personal Computer Hard Disk Drive Division, and at Hewlett-Packard. Ms. Shoquist holds a B.S. degree in Electrical Engineering from Kansas State University and a B.S. degree in Biology from Santa Clara University. Timothy S. Teter  joined NVIDIA in 2017 as Senior Vice President, General Counsel and Secretary and became Executive Vice President, General Counsel and Secretary in February 2018. Prior to NVIDIA, Mr. Teter spent more than two decades at the law firm of Cooley LLP, where he focused on litigating patent and technology related matters. Prior to attending law school, he worked as an engineer at Lockheed Missiles and Space Company, an aerospace company"
+  },
+  {
+    "id": "Q08",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What are the main factors that affect Xbox revenue for Microsoft?",
+    "ground_truth": "subscriptions and sales of first- and third-party content, as well as advertising",
+    "reference_context": ". Xbox enables people to connect and share online gaming experiences that are accessible on Xbox consoles, Windows-enabled devices, and other devices. Xbox is designed to benefit users by providing access to a network of certified applications and services and to benefit our developer and partner ecosystems by providing access to a large customer base. Xbox revenue is mainly affected by subscriptions and sales of first- and third-party content, as well as advertising. Growth of our Gaming business is determined by the overall active user base through Xbox enabled content, availability of games, providing exclusive game content that gamers seek, the computational power and reliability of the devices used to access our content and services, and the ability to create new experiences. Search and News Advertising Our Search and news advertising business is designed to deliver relevant search, native, and display advertising to a global audience. Our Microsoft Edge browser and Bing search engine with Copilot are key tools to enable user acquisition and engagement, while our technology platform enables accelerated delivery of digital advertising solutions. In addition to first-party tools, we have several partnerships with companies, such as Yahoo, through which we provide and monetize search offerings. Growth depends on our ability to attract new users, understand intent, and match intent with relevant content on advertising offerings"
+  },
+  {
+    "id": "Q09",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What impact will the costs to build and maintain infrastructure for cloud computing and AI services have on Microsoft\u2019s operating margins?",
+    "ground_truth": "These costs will reduce the operating margins.",
+    "reference_context": ". Many of our competitors also develop and sell software to businesses and consumers under this model. \u2022 Other competitors develop and offer free applications, online services, and content, and make money by selling third-party advertising. Advertising revenue funds development of products and services these competitors provide to users at little or no cost, competing directly with our revenue-generating products. \u2022 Some companies compete with us by modifying and then distributing open source software at little or no cost to end users, using open source AI models,   and earning revenue on advertising or integrated products and services. These firms do not bear the full costs of research and development for the open source products. Some open source products mimic the features and functionality of our products. The competitive pressures described above may cause decreased sales volumes, price reductions, and/or increased operating costs, such as for research and development, marketing, and sales incentives, which may adversely affect our financial condition and results of operations. Our focus on cloud-based and AI services presents execution and competitive risks.  We are incurring significant costs to build and maintain infrastructure to support cloud computing and AI services. These costs will reduce the operating margins"
+  },
+  {
+    "id": "Q10",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What operational risk does Microsoft identify that could result in excessive outages, data losses, and disruptions of its online services?",
+    "ground_truth": "excessive outages, data losses, and disruptions of its online services if we fail to maintain an adequate operations infrastructure",
+    "reference_context": ". Human review of certain inputs and outputs may be required, including for agentic AI systems that can take actions autonomously. Our implementation of AI systems could result in legal liability, regulatory action, brand, reputational, or competitive harm, or other adverse impacts. These risks may stem from issues related to intellectual property, data privacy, and other claims associated with AI training and outputs. They are further compounded by the evolving regulatory landscape, with new laws emerging globally, including the European Union (\u201cEU\u201d). Some AI scenarios present ethical issues or may have broad impacts on society. There is also rising divergence globally in how to address these issues and impacts, with the result that we will need to navigate a web of different tensions across geographies. Finally, if we enable or offer AI solutions that have unintended consequences, unintended usage or customization by our customers and partners, are contrary to our responsible AI policies and practices, or are otherwise controversial because of the impact on human rights, privacy, employment, or other social, economic, or political issues, our reputation, competitive position, business, financial condition, and results of operations could be adversely affected. OPERATIONAL RISKS We may have excessive outages, data losses, and disruptions of our online services if we fail to maintain an adequate operations infrastructure"
+  },
+  {
+    "id": "Q11",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "What percentage of the supercomputers on the global TOP500 list are powered by NVIDIA?",
+    "ground_truth": "over 75%",
+    "reference_context": ". 4 Table of Contents Researchers and developers use our computing solutions to accelerate a wide range of important applications, from simulating molecular dynamics to climate forecasting. With support for more than 3,500 applications, NVIDIA computing enables some of the most promising areas of discovery, from climate prediction to materials science and from wind tunnel simulation to genomics. Including GPUs and networking, NVIDIA powers over 75% of the supercomputers on the global TOP500 list, including 24 of the top 30 systems on the Green500 list.  Gamers choose NVIDIA GPUs to enjoy immersive, increasingly cinematic virtual worlds. In addition to serving the growing number of gamers, the market for PC GPUs is expanding because of the burgeoning population of live streamers, broadcasters, artists, and creators. With the advent of generative AI, we expect a broader set of PC users to choose NVIDIA GPUs for running generative AI applications locally on their PC, which is critical for privacy, latency, and cost-sensitive AI applications. Professional artists, architects and designers use NVIDIA partner products accelerated with our GPUs and software platform for a range of creative and design use cases, such as creating visual effects in movies or designing buildings and products. In addition, generative AI is expanding the market for our workstation-class GPUs, as more enterprise customers develop and deploy AI applications with their data on-premises"
+  },
+  {
+    "id": "Q12",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What factor does Microsoft identify that could adversely affect the cost or availability of its datacenter dependencies?",
+    "ground_truth": "the transition to a clean energy economy",
+    "reference_context": ".  Our increasing user traffic, growth in services, and the complexity of our products and services demand more computing power. We spend substantial amounts to build, purchase, or lease datacenters and equipment and to upgrade our technology and network infrastructure to handle more traffic on our websites and in our datacenters. Our datacenters depend on the availability of permitted and buildable land, predictable energy, networking supplies, and servers, including graphics processing units and other components. The cost or availability of these dependencies could be adversely affected by a variety of factors, including the transition to a clean energy economy, local and regional environmental regulations, and geopolitical disruptions. These demands continue to increase as we introduce new products and services and support the growth and the augmentation of existing services, including through the incorporation of AI features and/or functionality. We are rapidly growing our business of providing a platform and back-end hosting for services provided by third parties to their end users. Maintaining, securing, and expanding this infrastructure is expensive and complex, and requires development of principles for datacenter builds in geographies with higher safety and reliability risks"
+  },
+  {
+    "id": "Q13",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "What date does NVIDIA report for the 'Patents and Licensed Technology' member in its 2024 10-K filing?",
+    "ground_truth": "2024-01-28",
+    "reference_context": "2022-01-31 2023-01-29 0001045810 us-gaap:EmployeeStockMember srt:MinimumMember 2021-02-01 2022-01-30 0001045810 srt:MaximumMember us-gaap:EmployeeStockMember 2021-02-01 2022-01-30 0001045810 nvda:RSUsPSUsandMarketbasedPSUsMember 2024-01-28 0001045810 us-gaap:ShareBasedCompensationAwardTrancheOneMember us-gaap:RestrictedStockUnitsRSUMember 2023-01-30 2024-01-28 0001045810 us-gaap:RestrictedStockUnitsRSUMember us-gaap:ShareBasedCompensationAwardTrancheTwoMember 2023-01-30 2024-01-28 0001045810 us-gaap:RestrictedStockUnitsRSUMember us-gaap:ShareBasedCompensationAwardTrancheThreeMember 2023-01-30 2024-01-28 0001045810 us-gaap:PerformanceSharesMember 2023-01-30 2024-01-28 0001045810 nvda:MarketbasedPerformanceShareUnitsMember 2023-01-30 2024-01-28 nvda:period 0001045810 nvda:ComputeAndNetworkingMember 2024-01-28 0001045810 nvda:GraphicsMember 2024-01-28 0001045810 nvda:ComputeAndNetworkingMember 2023-01-29 0001045810 nvda:GraphicsMember 2023-01-29 0001045810 nvda:IntangibleAssetsArisingFromBusinessCombinationMember 2024-01-28 0001045810 nvda:IntangibleAssetsArisingFromBusinessCombinationMember 2023-01-29 0001045810 nvda:PatentsAndLicensedTechnologyMember 2024-01-28 0001045810 nvda:PatentsAndLicensedTechnologyMember 2023-01-29 0001045810 us-gaap:InProcessResearchAndDevelopmentMember 2022-05-01 0001045810 us-gaap:CorporateDebtSecuritiesMember 2024-01-28 0001045810 us-gaap:USTreasurySecuritiesMember 2024-01-28 0001045810 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 2024-01-28"
+  },
+  {
+    "id": "Q14",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "What percentage of NVIDIA's total electricity use was matched by renewable energy purchases in fiscal year 2023?",
+    "ground_truth": "44%",
+    "reference_context": ".  In May 2023, we published metrics related to our environmental impact for fiscal year 2023. Fiscal year 2024 metrics are expected to be published in the first half of fiscal year 2025. There has been no material impact to our capital expenditures, results of operations or competitive position associated with global environmental sustainability regulations, compliance, or costs from sourcing renewable energy. By the end of fiscal year 2025, our goal is to purchase  10 Table of Contents or generate enough renewable energy to match 100% of our global electricity usage for our offices and data centers. In fiscal year 2023, we increased the percentage of our total electricity use matched by renewable energy purchases to 44%. By fiscal year 2026, we aim to engage manufacturing suppliers comprising at least 67% of NVIDIA\u2019s scope 3 category 1 GHG emissions with goal of effecting supplier adoption of science-based targets. Whether it is creation of technology to power next-generation laptops or designs to support high-performance supercomputers, improving energy efficiency is important in our research, development, and design processes. GPU-accelerated computing is inherently more energy efficient than traditional computing for many workloads because it is optimized for throughput, performance per watt, and certain AI workloads. The energy efficiency of our products is evidenced by our continued strong presence on the Green500 list of the most energy-efficient systems"
+  },
+  {
+    "id": "Q15",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "Which cloud platform does Microsoft use as the exclusive cloud provider for OpenAI's workloads?",
+    "ground_truth": "Azure",
+    "reference_context": ". We offer a wide selection of industry-leading frontier and open models, including from partners, as well as state-of-the-art tooling, and AI-optimized infrastructure, delivering the Copilot stack for Microsoft, enterprises, and developers. Organizations large and small are deploying Azure AI solutions to achieve more at scale, more easily, with the proper enterprise-level responsible AI and safety and security protections. Azure AI Studio provides a full lifecycle toolchain customers can use to ground these models on their own data, create prompt workflows, and help ensure they are deployed and used safely. GitHub Copilot is at the forefront of AI-powered software development, giving developers a tool to write code easier and faster. From GitHub to Visual Studio, we provide a developer tool chain for everyone, no matter the technical experience, across all platforms. We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy OpenAI\u2019s models across our consumer and enterprise products. As OpenAI\u2019s exclusive cloud provider, Azure powers all of OpenAI's workloads. We have also increased our investments in the development and deployment of specialized supercomputing systems to accelerate OpenAI\u2019s research. Our hybrid infrastructure offers integrated, end-to-end security, compliance, identity, and management capabilities to support the real-world needs and evolving regulatory requirements of commercial customers and enterprises"
+  },
+  {
+    "id": "Q16",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What is the tag used for retained earnings for NVIDIA on 2026-01-25?",
+    "ground_truth": "us-gaap:RetainedEarningsMember",
+    "reference_context": "2024-01-28 0001045810 us-gaap:RetainedEarningsMember 2024-01-28 0001045810 2024-01-28 0001045810 us-gaap:RetainedEarningsMember 2024-01-29 2025-01-26 0001045810 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2024-01-29 2025-01-26 0001045810 us-gaap:CommonStockMember 2024-01-29 2025-01-26 0001045810 us-gaap:AdditionalPaidInCapitalMember 2024-01-29 2025-01-26 0001045810 us-gaap:CommonStockMember 2025-01-26 0001045810 us-gaap:AdditionalPaidInCapitalMember 2025-01-26 0001045810 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2025-01-26 0001045810 us-gaap:RetainedEarningsMember 2025-01-26 0001045810 us-gaap:RetainedEarningsMember 2025-01-27 2026-01-25 0001045810 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2025-01-27 2026-01-25 0001045810 us-gaap:CommonStockMember 2025-01-27 2026-01-25 0001045810 us-gaap:AdditionalPaidInCapitalMember 2025-01-27 2026-01-25 0001045810 us-gaap:CommonStockMember 2026-01-25 0001045810 us-gaap:AdditionalPaidInCapitalMember 2026-01-25 0001045810 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2026-01-25 0001045810 us-gaap:RetainedEarningsMember 2026-01-25 0001045810 srt:MinimumMember 2025-01-27 2026-01-25 0001045810 srt:MaximumMember 2025-01-27 2026-01-25 0001045810 srt:MinimumMember 2026-01-25 0001045810 srt:MaximumMember 2026-01-25 0001045810 us-gaap:BuildingMember 2026-01-25 0001045810 nvda:GroqInc.NonExclusiveLicenseAgreementMember 2025-12-31 0001045810 nvda:GroqInc.NonExclusiveLicenseAgreementMember"
+  },
+  {
+    "id": "Q17",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "What percentage of NVIDIA's revenue in fiscal year 2024 was generated from sales outside of the United States?",
+    "ground_truth": "56%",
+    "reference_context": ". We sell our products internationally, and we also have operations and conduct business internationally. Our semiconductor wafers are manufactured, assembled, tested and packaged by third parties located outside of the United States, and we generated 56% of our revenue in fiscal year 2024 from sales outside of the United States. Our sales to China decreased as a percentage of total Data Center revenue from 19% in fiscal year 2023 to 14% in fiscal year 2024. Although we have not received licenses from the USG to ship restricted products to China, we have started to ship alternatives to the China market in small volumes. China represented a mid-single digit percentage of our Data Center revenue in the fourth quarter of fiscal year 2024 due to USG licensing requirements and we expect China to be in a similar range in the first quarter of fiscal year 2025. The global nature of our business subjects us to a number of risks and uncertainties, which have had in the past and could in the future have a material adverse effect on our business, financial condition and results of operations"
+  },
+  {
+    "id": "Q18",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "Which Apple product category's net sales were relatively flat in 2026 compared to 2025?",
+    "ground_truth": "iPad",
+    "reference_context": ". The weakness in the yen relative to the U.S. dollar had an unfavorable year-over-year impact on Japan net sales during 2026. Rest of Asia Pacific Rest of Asia Pacific net sales increased during 2026 compared to 2025 primarily due to higher net sales of iPhone, Services and Mac. Apple Inc. | 2026 Form 10-K | 25 Products and Services Performance The following table shows net sales by category for 2026, 2025 and 2024 (dollars in millions): (1) Services net sales include amortization of the deferred value of services bundled in the sales price of certain products. iPhone  iPhone net sales increased during 2026 compared to 2025 due to higher net sales of Pro models. Mac Mac net sales increased during 2026 compared to 2025 due to higher net sales of laptops. iPad iPad net sales during 2026 compared to 2025 were relatively flat. Wearables, Home and Accessories Wearables, Home and Accessories net sales during 2026 compared to 2025 were relatively flat. Services Services net sales increased during 2026 compared to 2025 primarily due to higher net sales from advertising and cloud services. Apple Inc. | 2026 Form 10-K | 26 Gross Margin Products and Services gross margin and gross margin percentage for 2026, 2025 and 2024 were as follows (dollars in millions): Products Gross Margin Products gross margin and gross margin percentage increased during 2026 compared to 2025 primarily due to product mix and tariff refunds, partially offset by higher costs, including memory"
+  },
+  {
+    "id": "Q19",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What risk does Microsoft identify regarding the availability of components for its servers and devices?",
+    "ground_truth": "Extended or unforeseen disruptions, or limited availability of components from these suppliers could impact our ability to operate our datacenters and manufacture devices on time to meet consumer demand.",
+    "reference_context": ". In addition to our operations center, we also operate datacenters throughout each of these regions. We continue to align our datacenter locations and server capacity to meet the evolving needs of our customers, particularly given the growing demand for AI services. Our datacenters depend on the availability of permitted and buildable land, predictable energy, networking supplies, and servers, including graphics processing units and other components. We engage third-party manufacturers to produce our devices and have implemented measures to enhance supply chain efficiency and resilience, including the ability to relocate production geographically.   There are few qualified suppliers for certain components of our servers and devices. Extended or unforeseen disruptions, or limited availability of components from these suppliers could impact our ability to operate our datacenters and manufacture devices on time to meet consumer demand. RESEARCH AND DEVELOPMENT   Product and Service Development   Our success is based on our ability to create new and compelling products, services, and experiences for our users, initiate and embrace disruptive technology trends, enter new geographic and product markets, and drive broad adoption of our products and services"
+  },
+  {
+    "id": "Q20",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What types of harm could result from vulnerabilities being exploited at NVIDIA?",
+    "ground_truth": "reputational and financial harm",
+    "reference_context": ". While we invest in training programs and security awareness initiatives and take steps to detect and remediate certain vulnerabilities that we have identified, we may not always be able to prevent threats or detect and mitigate all vulnerabilities in our security controls, systems or software, including third-party software we have installed, as such threats and techniques change frequently and may not be detected until after a security incident has occurred. Further, we may experience delays in developing and deploying remedial measures designed to address identified vulnerabilities. These vulnerabilities could result in reputational and financial harm, and if exploited, these vulnerabilities could result in a security incident. We hold confidential, sensitive, personal and proprietary information, including information from partners and customers. Breaches of our security measures, along with reported or perceived vulnerabilities or unapproved dissemination of proprietary information or sensitive or confidential data about us or third parties, could expose us and the parties affected to a risk of loss, or misuse of this information, potentially resulting in litigation and subsequent liability, regulatory inquiries or actions, damage to our brand and reputation or other harm, including financial, to our business. For example, we hold proprietary game source code from third-party partners in our GFN service"
+  },
+  {
+    "id": "Q21",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What factor impacts Windows OEM revenue by influencing the mix of computing devices based on form factor and screen size?",
+    "ground_truth": "The mix of computing devices based on form factor and screen size.",
+    "reference_context": ". \u2022 Search and news advertising, comprising Bing (including Copilot), Microsoft News, Microsoft Edge, and third-party affiliates. Windows The Windows operating system is designed to deliver a more personal computing experience for users by enabling consistency of experience, applications, and information across their devices. Windows OEM revenue is impacted significantly by the number of Windows operating system licenses purchased by OEMs, which they pre-install on the devices they sell. In addition to computing device market volume, Windows OEM revenue is impacted by: \u2022 The mix of computing devices based on form factor and screen size. \u2022 Differences in device market demand between developed markets and growth markets. \u2022 Growth of the AI PC category \u2022 Attachment of Windows to devices shipped. \u2022 Customer mix between consumer, small and medium businesses, and large enterprises. \u2022 Changes in inventory levels in the OEM channel. \u2022 Pricing changes and promotions, pricing variation that occurs when the mix of devices manufactured shifts from local and regional system builders to large multinational OEMs, and different pricing of Windows versions licensed. \u2022 Constraints in the supply chain of device components. \u2022 Piracy"
+  },
+  {
+    "id": "Q22",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What type of debt did Microsoft issue during the period 2023-07-01 to 2024-06-30?",
+    "ground_truth": "Long Term Debt",
+    "reference_context": "2023-07-01 2024-06-30 0000789019 msft:ShareRepurchaseProgramTwentyTwentyOneMember 2023-04-01 2023-06-30 0000789019 msft:OtherMeasurementMember us-gaap:EquitySecuritiesMember 2023-06-30 0000789019 msft:IssuanceOfLongTermDebtTwelveMember srt:MinimumMember 2024-06-30 0000789019 us-gaap:OtherCurrentLiabilitiesMember 2024-06-30 0000789019 msft:IssuanceOfLongTermDebtFiveMember 2023-07-01 2024-06-30 0000789019 msft:ProductivityAndBusinessProcessesMember 2022-06-30 0000789019 msft:MorePersonalComputingMember 2022-06-30 0000789019 us-gaap:ContractualRightsMember 2022-07-01 2023-06-30 iso4217:EUR xbrli:pure xbrli:shares iso4217:USD xbrli:shares iso4217:USD UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C"
+  },
+  {
+    "id": "Q23",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What sustainability goals did Microsoft announce in 2020?",
+    "ground_truth": "to become carbon negative, water positive, and zero waste by 2030.",
+    "reference_context": ". New requirements related to the use of data, including the Data Act, add additional rules and restrictions on the use of data in our products and services. \u2022 Environmental, Social, and Governance:  Laws, regulations, and policies relating to environmental, social, and governance matters are being developed and formalized in Europe, the U.S., and elsewhere, which may include greenhouse gas emissions and energy usage caps, permitting, reporting, procurement, operational, and infrastructure-siting requirements as well as specific, target-driven environmental, social, and governance frameworks and disclosure requirements. These laws, regulations, and policies may require significant investments or operational changes and may result in new or unexpected costs. In addition, in 2020 we announced goals to become carbon negative, water positive, and zero waste by 2030. AI development and deployment has and will likely continue to raise energy use and emissions, making it harder to meet these goals. Any failure or perceived failure to meet our sustainability goals, or to meet various sustainability regulatory requirements, could result in claims and lawsuits, regulatory actions, penalties, or damage to our reputation, each of which could adversely affect our business, operations, financial condition, and results of operations"
+  },
+  {
+    "id": "Q24",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "What Fair Value Inputs Level is associated with the 'nvda:A2024NotesMember' in the 2024 filing?",
+    "ground_truth": "Level 2",
+    "reference_context": "2024-01-28 0001045810 us-gaap:FairValueInputsLevel2Member us-gaap:ForeignGovernmentDebtMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member us-gaap:ForeignGovernmentDebtMember 2024-01-28 0001045810 us-gaap:FairValueInputsLevel2Member us-gaap:CertificatesOfDepositMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member us-gaap:CertificatesOfDepositMember 2024-01-28 0001045810 us-gaap:FairValueInputsLevel1Member 2025-01-26 0001045810 us-gaap:FairValueInputsLevel1Member 2024-01-28 0001045810 nvda:A2024NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2024NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2024NotesMember 2024-01-28 0001045810 nvda:A2026NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2026NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2026NotesMember 2024-01-28 0001045810 nvda:A2028NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2028NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2028NotesMember 2024-01-28 0001045810 nvda:A2030NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2030NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2030NotesMember 2024-01-28 0001045810 nvda:A2031NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member nvda:A2031NotesMember 2025-01-26 0001045810 us-gaap:FairValueInputsLevel2Member"
+  },
+  {
+    "id": "Q25",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "When did Microsoft record the acquisition of Activision Blizzard Inc.?",
+    "ground_truth": "2023-10-13",
+    "reference_context": "0000789019 2024-01-01 2024-03-31 0000789019 us-gaap:EquityContractMember us-gaap:LongMember us-gaap:NondesignatedMember 2023-06-30 0000789019 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-06-30 0000789019 msft:OtherCountriesMember 2023-06-30 0000789019 us-gaap:DerivativeMember 2023-06-30 0000789019 us-gaap:OtherCurrentAssetsMember 2023-06-30 0000789019 msft:MorePersonalComputingMember 2023-06-30 0000789019 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:LongMember us-gaap:InterestRateContractMember 2023-06-30 0000789019 msft:AccumulatedTranslationAdjustmentAndOtherMember 2022-06-30 0000789019 us-gaap:CommonStockIncludingAdditionalPaidInCapitalMember 2023-07-01 2024-06-30 0000789019 msft:ActivisionBlizzardIncMember 2023-10-13 0000789019 us-gaap:LongMember us-gaap:NondesignatedMember us-gaap:ForeignExchangeContractMember 2023-06-30 0000789019 msft:IssuanceOfLongTermDebtSixMember 2024-06-30 0000789019 us-gaap:NonoperatingIncomeExpenseMember us-gaap:ForeignExchangeContractMember us-gaap:FairValueHedgingMember 2023-07-01 2024-06-30 0000789019 us-gaap:ServiceLifeMember msft:NetworkEquipmentMember 2022-07-01 0000789019 msft:IssuanceOfLongTermDebtOneMember 2024-06-30 0000789019 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2023-06-30 0000789019 msft:GamingMember 2023-07-01 2024-06-30 0000789019 msft:AccumulatedTranslationAdjustmentAndOtherMember 2021-07-01 2022-06-30 0000789019 us-gaap:OtherContractMember us-gaap:NonoperatingIncomeExpenseMember 2021-07-01"
+  },
+  {
+    "id": "Q26",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What could result from Apple failing to comply with changing laws, regulations, and other legal obligations?",
+    "ground_truth": "significant penalties, fines, and other legal liability",
+    "reference_context": ". These obligations can increase regulatory risks by requiring complex compliance measures and significant modifications to the Company\u2019s products, services and operations, and may lead to operational disruptions, heightened privacy and data security risks, and increased costs, all of which could have a material adverse effect on the Company\u2019s business, reputation, results of operations, financial condition and stock price. Failure to comply with such changing laws, regulations and other legal obligations can also result in  significant penalties, fines, and other legal liability. Apple Inc. | 2026 Form 10-K | 17 Financial Risks The Company\u2019s net sales, gross margins and results of operations are subject to volatility and downward pressure due to a variety of factors. The Company\u2019s gross margins vary significantly across its products, services, geographic segments and distribution channels and can change over time"
+  },
+  {
+    "id": "Q27",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What are the two cloud platforms NVIDIA uses to provide interactive graphics applications to almost any device?",
+    "ground_truth": "vGPU for enterprise and GeForce NOW for gaming",
+    "reference_context": ". Our computer graphics platforms leverage AI end-to-end, from the developer tools and cloud services to the Tensor Cores included in all RTX-class GPUs. For example, NVIDIA Avatar Cloud Engine, or ACE, is a suite of technologies that help developers bring digital avatars to life with generative AI, running in the cloud or locally on the PC. GeForce Experience enhances each gamer\u2019s experience by optimizing their PC\u2019s settings, as well as enabling the recording and sharing of gameplay. Our Studio drivers enhance and accelerate a number of popular creative applications. Omniverse is real-time 3D design collaboration and virtual world simulation software that empowers artists, designers, and creators to connect and collaborate in leading design applications. We also enable interactive graphics applications - such as games, movie and photo editing and design software - to be accessed by almost any device, almost anywhere, through our cloud platforms such as vGPU for enterprise and GeForce NOW for gaming.  Advancing the leading autonomous vehicle platform.  We believe the advent of autonomous vehicles, or AV, and electric vehicles, or EV, is revolutionizing the transportation industry. The algorithms required for autonomous driving - such as perception, localization, and planning - are too complex for legacy hand-coded approaches and will use multiple neural networks instead"
+  },
+  {
+    "id": "Q28",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What region is NVIDIA's supply chain currently concentrated in?",
+    "ground_truth": "Asia-Pacific region",
+    "reference_context": ". While we work to enhance the resiliency and redundancy of our supply chain, which is currently concentrated in the Asia-Pacific region, new and existing export controls or changes to existing export controls could limit alternative manufacturing locations and negatively impact our business. Refer to \u201cItem 1A. Risk Factors \u2013 Risks Related to Regulatory, Legal, Our Stock and Other Matters\u201d for a discussion of this potential impact. 10 Table of Contents Compliance with laws, rules, and regulations has not otherwise had a material effect upon our capital expenditures, results of operations, or competitive position and we do not currently anticipate material capital expenditures for environmental control facilities. Compliance with existing or future governmental regulations, including, but not limited to, those pertaining to IP ownership and infringement, taxes, import and export requirements and tariffs, anti-corruption, business acquisitions, foreign exchange controls and cash repatriation restrictions, data privacy requirements, competition and antitrust, advertising, employment, product regulations, cybersecurity, environmental, health and safety requirements, the responsible use of AI, climate change, cryptocurrency, and consumer laws, could further increase our costs, impact our competitive position, and otherwise may have a material adverse impact on our business, financial condition and results of operations in subsequent periods. Refer to \u201cItem 1A"
+  },
+  {
+    "id": "Q29",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "What is the date of NVIDIA's most recent Research and Development Expense entry?",
+    "ground_truth": "2025-01-26",
+    "reference_context": "0001045810 us-gaap:AdditionalPaidInCapitalMember 2024-01-29 2025-01-26 0001045810 us-gaap:CommonStockMember 2025-01-26 0001045810 us-gaap:AdditionalPaidInCapitalMember 2025-01-26 0001045810 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2025-01-26 0001045810 us-gaap:RetainedEarningsMember 2025-01-26 0001045810 srt:MinimumMember 2024-01-29 2025-01-26 0001045810 srt:MaximumMember 2024-01-29 2025-01-26 0001045810 us-gaap:CapitalLossCarryforwardMember 2025-01-26 0001045810 srt:MinimumMember nvda:EquipmentComputeHardwareAndSoftwareMember 2025-01-26 0001045810 srt:MinimumMember 2025-01-26 0001045810 srt:MaximumMember nvda:EquipmentComputeHardwareAndSoftwareMember 2025-01-26 0001045810 srt:MaximumMember 2025-01-26 0001045810 us-gaap:BuildingMember 2025-01-26 0001045810 nvda:ArmLimitedMember 2022-01-31 2023-01-29 0001045810 us-gaap:CostOfSalesMember 2024-01-29 2025-01-26 0001045810 us-gaap:CostOfSalesMember 2023-01-30 2024-01-28 0001045810 us-gaap:CostOfSalesMember 2022-01-31 2023-01-29 0001045810 us-gaap:ResearchAndDevelopmentExpenseMember 2024-01-29 2025-01-26 0001045810 us-gaap:ResearchAndDevelopmentExpenseMember 2023-01-30 2024-01-28 0001045810 us-gaap:ResearchAndDevelopmentExpenseMember 2022-01-31 2023-01-29 0001045810 us-gaap:SellingGeneralAndAdministrativeExpensesMember 2024-01-29 2025-01-26 0001045810 us-gaap:SellingGeneralAndAdministrativeExpensesMember 2023-01-30 2024-01-28 0001045810 us-gaap:SellingGeneralAndAdministrativeExpensesMember 2022-01-31 2023-01-29 0001045810"
+  },
+  {
+    "id": "Q30",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What is the period for Microsoft\u2019s Share Repurchase Program TwentyTwentyOneMember as listed in the excerpt?",
+    "ground_truth": "2022-01-01 2022-03-31",
+    "reference_context": "msft:OtherProductsAndServicesMember 2022-07-01 2023-06-30 0000789019 msft:CommercialCustomersMember 2024-06-30 0000789019 us-gaap:ForeignCountryMember srt:MaximumMember 2023-07-01 2024-06-30 0000789019 2022-07-01 2023-06-30 0000789019 us-gaap:OtherNoncurrentAssetsMember us-gaap:AllowanceForCreditLossMember 2022-06-30 0000789019 msft:ShareRepurchaseProgramTwentyTwentyOneMember 2022-01-01 2022-03-31 0000789019 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:LongMember us-gaap:ForeignExchangeContractMember 2024-06-30 0000789019 srt:MaximumMember 2024-06-30 0000789019 msft:MorePersonalComputingMember 2021-07-01 2022-06-30 0000789019 us-gaap:EquitySecuritiesMember 2023-06-30 0000789019 us-gaap:ServiceLifeMember msft:NetworkEquipmentMember 2022-06-30 0000789019 msft:IssuanceOfLongTermDebtFiveMember 2024-06-30 0000789019 us-gaap:EquityContractMember us-gaap:NonoperatingIncomeExpenseMember 2023-07-01 2024-06-30 0000789019 msft:IntelligentCloudMember 2021-07-01 2022-06-30 0000789019 msft:ShareRepurchaseProgramTwentyTwentyOneMember 2024-01-01 2024-03-31 0000789019 msft:IssuanceOfLongTermDebtTwelveMember srt:MaximumMember 2024-06-30 0000789019 us-gaap:RestrictedStockUnitsRSUMember msft:ExecutiveIncentivePlanMember 2023-07-01 2024-06-30 0000789019 us-gaap:RetainedEarningsMember 2021-06-30 0000789019 msft:AccumulatedTranslationAdjustmentAndOtherMember 2023-07-01 2024-06-30 0000789019 us-gaap:CashFlowHedgingMember us-gaap:OtherComprehensiveIncomeMember 2023-07-01 2024-06-30 0000789019"
+  },
+  {
+    "id": "Q31",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What type of cybersecurity incidents does Apple experience on a regular basis?",
+    "ground_truth": "malicious attacks and other attempts to gain unauthorized access to its systems",
+    "reference_context": ". These events could materially adversely affect the Company\u2019s business, reputation, results of operations, financial condition and stock price. The Company experiences cybersecurity incidents and inadvertent losses and unauthorized access to or releases of confidential information, including personal information. The Company\u2019s business requires it to use and store confidential information, including personal and sensitive health and financial information with respect to the Company\u2019s customers and employees. The Company\u2019s business also requires it to share confidential information with suppliers, service providers and other third parties. The Company relies on global suppliers that are also exposed to cybersecurity, ransomware and other malicious attacks that can disrupt business operations. The Company devotes significant resources to systems and data security, including through the use of encryption and other security measures intended to protect its systems and data, and takes steps to secure confidential information provided to or accessible by third parties working on the Company\u2019s behalf. However, these measures cannot provide absolute security and are not always effective, and losses or unauthorized access to or releases of confidential information do occur. The Company experiences malicious attacks and other attempts to gain unauthorized access to its systems on a regular basis"
+  },
+  {
+    "id": "Q32",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What risk factor is mentioned in the excerpt that can impact Windows OEM revenue for Microsoft?",
+    "ground_truth": "Piracy",
+    "reference_context": ". Windows OEM revenue is impacted significantly by the number of Windows operating system licenses purchased by OEMs, which they pre-install on the devices they sell. In addition to computing device market volume, Windows OEM revenue is impacted by:   \u2022 The mix of computing devices based on form factor and screen size. \u2022 Differences in device market demand between developed markets and growth markets. \u2022 Growth of the AI PC category. \u2022 Attachment of Windows to devices shipped. \u2022 Customer mix between consumer, small and medium businesses, and large enterprises. \u2022 Changes in inventory levels in the OEM channel. \u2022 Pricing changes and promotions, pricing variation that occurs when the mix of devices manufactured shifts from local and regional system builders to large multinational OEMs, and different pricing of Windows versions licensed. \u2022 Constraints in the supply chain of device components. \u2022 Piracy. We design and sell devices, such as Surface (including Copilot+ PCs) and PC accessories. Our devices are designed to enable people and organizations to connect to the people and content that matter most using Windows and integrated Microsoft products and services. Surface is designed to help organizations, students, and consumers be more productive. Growth in Devices is dependent on total PC shipments, the ability to attract new customers, our product roadmap, and expanding into new categories"
+  },
+  {
+    "id": "Q33",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What is the name of the member that indicates Microsoft issued long-term debt during the period July 1, 2023 to June 30, 2024?",
+    "ground_truth": "msft:IssuanceOfLongTermDebtSevenMember",
+    "reference_context": "msft:IssuanceOfLongTermDebtTwelveMember 2024-06-30 0000789019 us-gaap:ForeignExchangeContractMember us-gaap:CashFlowHedgingMember 2023-07-01 2024-06-30 0000789019 us-gaap:DebtSecuritiesMember us-gaap:FairValueInputsLevel2Member us-gaap:ForeignGovernmentDebtSecuritiesMember 2023-06-30 0000789019 us-gaap:RestrictedStockMember 2024-06-30 0000789019 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2022-07-01 2023-06-30 0000789019 us-gaap:AssetBackedSecuritiesMember 2024-06-30 0000789019 us-gaap:DebtSecuritiesMember 2024-06-30 0000789019 us-gaap:EmployeeStockMember 2022-06-30 0000789019 msft:MorePersonalComputingMember 2022-07-01 2023-06-30 0000789019 us-gaap:OtherContractMember us-gaap:NondesignatedMember us-gaap:ShortMember 2024-06-30 0000789019 us-gaap:RestrictedStockMember 2021-07-01 2022-06-30 0000789019 srt:MinimumMember msft:IssuanceOfLongTermDebtSevenMember 2023-07-01 2024-06-30 0000789019 msft:OtherCountriesMember 2022-06-30 0000789019 srt:MinimumMember msft:IssuanceOfLongTermDebtThirteenMember 2023-07-01 2024-06-30 0000789019 2022-05-01 2022-05-01 0000789019 us-gaap:AllowanceForCreditLossMember msft:AccountsReceivableNetMember 2022-06-30 0000789019 msft:OtherCountriesMember 2024-06-30 0000789019 us-gaap:DebtSecuritiesMember us-gaap:USTreasurySecuritiesMember us-gaap:FairValueInputsLevel1Member 2024-06-30 0000789019 msft:EnterpriseAndPartnerServicesMember 2023-07-01 2024-06-30 0000789019 srt:MaximumMember msft:IssuanceOfLongTermDebtSixMember 2023-07-01 2024-06-30"
+  },
+  {
+    "id": "Q34",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What are the potential consequences of violations of applicable laws for NVIDIA, as described in the excerpt?",
+    "ground_truth": "fines, criminal sanctions against us, our officers, or our employees, prohibitions on the conduct of our business, and damage to our reputation",
+    "reference_context": ". We are subject to laws and regulations domestically and worldwide, affecting our operations in areas including, but not limited to, IP ownership and infringement; taxes; import and export requirements and tariffs; anti-corruption, including the Foreign Corrupt Practices Act; business acquisitions; foreign exchange controls and cash repatriation restrictions; data privacy requirements; competition and antitrust; advertising; employment; product regulations; cybersecurity; environmental, health, and safety requirements; the responsible use of AI; sustainability; cryptocurrency; and consumer laws. Compliance with such requirements can be onerous and expensive, could impact our competitive position, and may negatively impact our business operations and ability to manufacture and ship our products. There can be no assurance that our employees, contractors, suppliers, customers or agents will not violate applicable laws or the policies, controls, and procedures that we have designed to help ensure compliance with such laws, and violations could result in fines, criminal sanctions against us, our officers, or our employees, prohibitions on the conduct of our business, and damage to our reputation. Changes to the laws, rules and regulations to which we are subject, or changes to their interpretation and enforcement, could lead to materially greater compliance and other costs and/or further restrictions on our ability to manufacture and supply our products and operate our business"
+  },
+  {
+    "id": "Q35",
+    "ticker": "NVDA",
+    "category": "quantitative",
+    "question": "In which fiscal year did NVIDIA report a surge in demand for its data center systems and products?",
+    "ground_truth": "fiscal year 2024",
+    "reference_context": ". Many additional factors have caused and/or could in the future cause us to either underestimate or overestimate our customers\u2019 future demand for our products, or otherwise cause a mismatch between supply and demand for our products and impact the timing and volume of our revenue, including: \u2022 changes in product development cycles and time to market; \u2022 competing technologies and competitor product releases and announcements; \u2022 changes in business and economic conditions resulting in decreased end demand; \u2022 sudden or sustained government lockdowns or actions to control case spread of global or local health issues; \u2022 rapidly changing technology or customer requirements; \u2022 the availability of sufficient data center capacity and energy for customers to procure; \u2022 new product introductions and transitions resulting in less demand for existing products; \u2022 new or unexpected end-use cases; \u2022 increase in demand for competitive products, including competitive actions; \u2022 business decisions made by third parties; \u2022 the demand for accelerated or AI-related cloud services, including our own software and NVIDIA DGX Cloud services; \u2022 changes that impact the ecosystem for the architectures underlying our products and technologies; \u2022 the demand for our products; or \u2022 government actions or changes in governmental policies, such as export controls or increased restrictions on gaming usage. Demand for our data center systems and products surged in fiscal year 2024"
+  },
+  {
+    "id": "Q36",
+    "ticker": "NVDA",
+    "category": "entity_specific",
+    "question": "What types of government actions could affect NVIDIA's ability to ship products, provide services, and fulfill contractual obligations?",
+    "ground_truth": "tariffs, import or export regulations, including deemed export restrictions and restrictions on the activities of U.S. persons, trade and economic sanctions, decrees, quotas or other trade barriers and restrictions",
+    "reference_context": ". Revisions to laws or regulations or their interpretation and enforcement could also result in increased taxation, trade sanctions, the imposition of or increase to import duties or tariffs, restrictions and controls on imports or exports, or other retaliatory actions, which could have an adverse effect on our business plans or impact the timing of our shipments. Additionally, changes in the public perception of governments in the regions where we operate or plan to operate could negatively impact our business and results of operations. Government actions, including trade protection and national and economic security policies of U.S. and foreign government bodies, such as tariffs, import or export regulations, including deemed export restrictions and restrictions on the activities of U.S. persons, trade and economic sanctions, decrees, quotas or other trade barriers and restrictions could affect our ability to ship products, provide services to our customers and employees, do business without an export license with entities on the U.S. Department of Commerce\u2019s U.S. Entity List or other USG restricted parties lists (which is expected to change from time to time), and generally fulfill our contractual obligations and have a material adverse effect on our business. If we were ever found to have violated export control laws or sanctions of the U.S. or similar applicable non-U.S"
+  },
+  {
+    "id": "Q37",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "Which foreign jurisdictions does Apple have subsidiaries organized in?",
+    "ground_truth": "Ireland and Singapore",
+    "reference_context": ". The Company is subject to changes in tax rates, the adoption of new U.S. or international tax legislation and exposure to additional tax liabilities. The Company is subject to taxes in the U.S. and numerous foreign jurisdictions, including Ireland and Singapore, where a number of the Company\u2019s subsidiaries are organized. Due to economic and political conditions, tax laws and tax rates for income taxes and other non-income taxes in various jurisdictions may be subject to significant change. For example, the Organisation for Economic Co-operation and Development continues to advance proposals for modernizing international tax rules, including the introduction of global minimum tax standards. The Company\u2019s effective tax rates are affected by changes in the mix of earnings in countries with differing statutory tax rates, changes in the valuation of deferred tax assets and liabilities, the introduction of new taxes, and changes in tax laws or their interpretation. The application of tax laws may be uncertain, require significant judgment and be subject to differing interpretations. The Company is also subject to the examination of its tax returns and other tax matters by the U.S. Internal Revenue Service and other tax authorities and governmental bodies. The Company regularly assesses the likelihood of an adverse outcome resulting from these examinations to determine the adequacy of its provision for taxes. The outcome of such examinations is inherently uncertain"
+  },
+  {
+    "id": "Q38",
+    "ticker": "AAPL",
+    "category": "quantitative",
+    "question": "What amount did the Commission fine Apple on April 23, 2025?",
+    "ground_truth": "\u20ac500 million",
+    "reference_context": ". On April 23, 2025, the Commission fined the Company \u20ac500 million in the Article 5(4) Investigation and issued a cease and desist order requiring the Company to remove technical and commercial restrictions that prevent developers from steering users to alternative distribution channels outside the App Store. The Company has appealed the Commission\u2019s Article 5(4) decision. Also on April 23, 2025, the Commission issued preliminary findings in the Article 6(4) Investigation. If the Commission makes a final determination in the Article 6(4) Investigation that there has been a violation, it can issue a cease and desist order and may impose fines up to 10% of the Company\u2019s annual worldwide net sales. The Commission may also seek to impose additional fines if it deems that the Company has violated a cease and desist order. The Company believes that it complies with the DMA and has continued to make changes to its compliance plan in response to feedback and engagement with the Commission. Department of Justice Lawsuit On March 21, 2024, the DOJ and a number of state and district attorneys general filed a civil antitrust lawsuit in the U.S. District Court for the District of New Jersey against the Company alleging monopolization or attempted monopolization in the markets for \u201cperformance smartphones\u201d and \u201csmartphones\u201d in violation of U.S. antitrust laws. The DOJ is seeking equitable relief to redress the alleged anticompetitive behavior"
+  },
+  {
+    "id": "Q39",
+    "ticker": "MSFT",
+    "category": "entity_specific",
+    "question": "What are the main factors that affect Azure revenue for Microsoft?",
+    "ground_truth": "Azure revenue is mainly affected by infrastructure-as-a-service and platform-as-a-service consumption-based services, and per user-based services such as Enterprise Mobility + Security.",
+    "reference_context": ". Intelligent Cloud Our Intelligent Cloud segment consists of our public, private, and hybrid server products and cloud services that can power modern business and developers. This segment primarily comprises: \u2022 Server products and cloud services, including Azure and other cloud services; SQL Server, Windows Server, Visual Studio, System Center, and related Client Access Licenses (\u201cCALs\u201d); and Nuance and GitHub. \u2022 Enterprise and partner services, including Enterprise Support Services, Industry Solutions, Nuance professional services, Microsoft Partner Network, and Learning Experience. Server Products and Cloud Services Azure is a comprehensive set of cloud services that offer developers, IT professionals, and enterprises freedom to build, deploy, and manage applications on any platform or device. Customers can use Azure through our global network of datacenters for computing, networking, storage, mobile and web application services, AI, Internet of Things (\u201cIoT\u201d), cognitive services, and machine learning. Azure enables customers to devote more resources to development and use of applications that benefit their organizations, rather than managing on-premises hardware and software. Azure revenue is mainly affected by infrastructure-as-a-service and platform-as-a-service consumption-based services, and per user-based services such as Enterprise Mobility + Security"
+  },
+  {
+    "id": "Q40",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What operating systems does Apple use for its Apple Vision Pro and Apple TV 4K?",
+    "ground_truth": "Apple uses visionOS for Apple Vision Pro and tvOS for Apple TV 4K.",
+    "reference_context": ". Apple Vision Pro \u00ae  is the Company\u2019s spatial computer based on its visionOS \u00ae  operating system. Home includes Apple TV 4K \u00ae , the Company\u2019s media streaming and gaming device based on its tvOS \u00ae  operating system, HomePod \u00ae  and HomePod mini \u00ae , high-fidelity wireless smart speakers, and Apple HomeView\u2122, the Company\u2019s smart home display for home control, communication and entertainment. Accessories includes Apple-branded and third-party accessories. Apple Inc. | 2026 Form 10-K | 1 Services Advertising The Company\u2019s advertising services include third-party licensing arrangements and the Company\u2019s own advertising platforms. AppleCare The Company offers a portfolio of fee-based service and support products under the AppleCare \u00ae  brand. The offerings provide priority access to Apple technical support, access to the global Apple authorized service network for repair and replacement services, and in many cases additional coverage for instances of accidental damage or theft and loss, depending on the country and type of product. Cloud Services The Company\u2019s cloud services store and keep customers\u2019 content up-to-date and available across multiple Apple devices and Windows personal computers, and will provide expanded access to Apple Intelligence\u2122 and Siri \u00ae  AI features. Digital Content The Company operates various platforms, including the App Store \u00ae ,  that allow customers to discover and download applications and digital content, such as books, music, video, games and podcasts"
+  },
+  {
+    "id": "Q41",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "Which countries does Apple rely on for its manufacturing outsourcing partners?",
+    "ground_truth": "China mainland, India, Japan, South Korea, Taiwan, Vietnam, and the U.S.",
+    "reference_context": ". Political events, trade and other international disputes, geopolitical tensions, conflict, terrorism, natural disasters, public health issues, industrial accidents and other business interruptions can have a material adverse effect on the Company and its customers, employees, developers, suppliers, contract manufacturers, logistics providers, distributors, cellular network carriers and other channel partners. The Company has a large, global business with sales outside the U.S. representing a majority of the Company\u2019s total net sales, and the Company believes that it generally benefits from growth in international trade. A significant majority of the Company\u2019s manufacturing is performed in whole or in part by outsourcing partners located primarily in China mainland, India, Japan, South Korea, Taiwan and Vietnam, in addition to sourcing from partners and facilities located in the U.S. Global supply chains can be highly concentrated, and an escalation of geopolitical tensions, conflict or instability, particularly in regions where the Company relies on single or limited sources for critical components, such as advanced semiconductors, memory and storage, or that are significant to global commodity markets such as oil, gas, rare earths, and other raw materials, could result in significant disruptions"
+  },
+  {
+    "id": "Q42",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What risk could result from Apple overestimating or underestimating requirements?",
+    "ground_truth": "Higher\u2011than\u2011expected costs or an inability to fully satisfy customer demand or expectations.",
+    "reference_context": ". In addition, the Company may overestimate or underestimate requirements, which could result in higher-than-expected costs for the Company or an inability to fully satisfy customer demand or expectations. Any of the foregoing can result in supply shortages and price increases that can materially adversely affect the Company\u2019s business, revenue, costs, gross margin, results of operations, financial condition and stock price. The Company\u2019s products, services and technologies, including artificial intelligence technologies and features, may be affected from time to time by design and manufacturing defects. The Company offers complex hardware and software products, services and technologies, including artificial intelligence technologies and features, that can be affected by design and manufacturing defects. Defects can exist in components and products designed by the Company or that the Company purchases from third parties. Defects could make the Company\u2019s products unsafe and create a risk of environmental or property damage and personal injury. These risks may increase as the Company\u2019s products are introduced into specialized applications, including health and financial services. In addition, the Company\u2019s service offerings can have quality issues and have experienced, and may in the future experience, outages, slowdowns, errors or other performance issues that do not meet user expectations"
+  },
+  {
+    "id": "Q43",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "Which operating system does Apple's iPhone line depend on?",
+    "ground_truth": "iOS",
+    "reference_context": ". The Company\u2019s fiscal year is the 52- or 53-week period that ends on the last Saturday of September. Products iPhone iPhone \u00ae  is the Company\u2019s line of smartphones based on its iOS operating system. The iPhone line includes iPhone Duo\u2122, iPhone 18 Pro, iPhone Air \u00ae , iPhone 17, iPhone 17e and iPhone 16. Mac Mac \u00ae  is the Company\u2019s line of personal computers based on its macOS \u00ae  operating system. The Mac line includes laptops MacBook Neo \u00ae , MacBook Air \u00ae  and MacBook Pro \u00ae , including MacBook Pro with PROLED XDR Display and Touch, as well as desktops iMac \u00ae , Mac mini \u00ae  and Mac Studio \u00ae . iPad iPad \u00ae  is the Company\u2019s line of multipurpose tablets based on its iPadOS \u00ae  operating system. The iPad line includes iPad Pro \u00ae , iPad Air \u00ae , iPad and iPad mini \u00ae . Wearables, Home and Accessories Wearables includes smartwatches, wireless headphones and spatial computers. The Company\u2019s line of smartwatches, based on its watchOS \u00ae  operating system, includes Apple Watch \u00ae  Series 12, Apple Watch Ultra \u00ae  4 and Apple Watch SE \u00ae  3. The Company\u2019s line of wireless headphones includes AirPods \u00ae , AirPods Pro \u00ae , AirPods Max \u00ae  and Beats \u00ae  products. Apple Vision Pro \u00ae  is the Company\u2019s spatial computer based on its visionOS \u00ae  operating system"
+  },
+  {
+    "id": "Q44",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What risk does Apple face related to unfavorable investigation outcomes under EU state aid rules?",
+    "ground_truth": "Unfavorable investigation outcome under EU state aid rules.",
+    "reference_context": "2023-09-30 0000320193 us-gaap:LeaseholdImprovementsMember 2024-09-28 0000320193 us-gaap:LeaseholdImprovementsMember 2023-09-30 0000320193 aapl:UnfavorableInvestigationOutcomeEUStateAidRulesMember 2016-08-30 2016-08-30 0000320193 aapl:UnfavorableInvestigationOutcomeEUStateAidRulesMember 2016-08-30 0000320193 aapl:UnfavorableInvestigationOutcomeEUStateAidRulesInterestComponentMember 2016-08-30 0000320193 aapl:UnfavorableInvestigationOutcomeEUStateAidRulesInterestComponentMember 2024-09-28 0000320193 aapl:UnfavorableInvestigationOutcomeEUStateAidRulesMember 2024-06-30 2024-09-28 0000320193 srt:MinimumMember 2024-09-28 0000320193 srt:MaximumMember 2024-09-28 0000320193 us-gaap:OperatingLeaseLeaseNotYetCommencedMember 2024-09-28 0000320193 us-gaap:CommercialPaperMember 2024-09-28 0000320193 us-gaap:CommercialPaperMember 2023-09-30 0000320193 us-gaap:CommercialPaperMember 2023-10-01 2024-09-28 0000320193 us-gaap:CommercialPaperMember 2022-09-25 2023-09-30 0000320193 aapl:A20132023DebtIssuancesMember aapl:FixedRateNotesMember srt:MinimumMember 2024-09-28 0000320193 aapl:A20132023DebtIssuancesMember aapl:FixedRateNotesMember srt:MaximumMember 2024-09-28 0000320193 aapl:A20132023DebtIssuancesMember aapl:FixedRateNotesMember 2023-10-01 2024-09-28 0000320193 aapl:A20132023DebtIssuancesMember aapl:FixedRateNotesMember 2024-09-28 0000320193 aapl:A20132023DebtIssuancesMember aapl:FixedRateNotesMember 2023-09-30 0000320193 aapl:A20132023DebtIssuancesMember aapl:FixedRateNotesMember"
+  },
+  {
+    "id": "Q45",
+    "ticker": "AAPL",
+    "category": "entity_specific",
+    "question": "What subscription-based services does Apple offer?",
+    "ground_truth": "Apple Arcade, Apple Fitness+, Apple Music, Apple News+, Apple TV",
+    "reference_context": ". The Company also offers digital content through subscription-based services, including Apple Arcade \u00ae , a game service; Apple Fitness+ \u00ae , a personalized fitness service; Apple Music \u00ae , which offers users a curated listening experience with on-demand radio stations; Apple News+ \u00ae , a news and magazine service; and Apple TV \u00ae , which offers exclusive original content and live sports. Payment Services The Company offers payment services, including Apple Card \u00ae , a co-branded credit card, and Apple Pay \u00ae , a cashless payment service. Segments The Company manages its business primarily on a geographic basis. The Company\u2019s reportable segments consist of the Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe includes European countries, as well as India, the Middle East and Africa. Greater China includes China mainland, Hong Kong and Taiwan. Rest of Asia Pacific includes Australia, New Zealand and those Asian countries not included in the Company\u2019s other reportable segments. Although the reportable segments provide similar hardware and software products and similar services, each one is managed separately to better align with the location of the Company\u2019s customers and distribution partners and the unique market dynamics of each geographic region. Markets and Distribution The Company\u2019s customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets"
+  },
+  {
+    "id": "Q46",
+    "ticker": "AAPL",
+    "category": "false_premise",
+    "question": "What regulatory fine did Apple disclose in its 10-K for the forced divestiture of its App Store payment division?",
+    "ground_truth": "INSUFFICIENT EVIDENCE: The SEC 10-K filings do not report any forced divestiture of the App Store payment division.",
+    "reference_context": ""
+  },
+  {
+    "id": "Q47",
+    "ticker": "NVDA",
+    "category": "false_premise",
+    "question": "How much revenue did NVIDIA generate from commercial nuclear fusion reactor licensing in fiscal year 2024?",
+    "ground_truth": "INSUFFICIENT EVIDENCE: The SEC 10-K filings contain no disclosures regarding commercial nuclear fusion reactor licensing revenue.",
+    "reference_context": ""
+  },
+  {
+    "id": "Q48",
+    "ticker": "MSFT",
+    "category": "false_premise",
+    "question": "What was the exact acquisition price Microsoft paid to acquire Oracle Corporation according to its latest 10-K?",
+    "ground_truth": "INSUFFICIENT EVIDENCE: Microsoft did not acquire Oracle Corporation in the SEC 10-K filings.",
+    "reference_context": ""
+  },
+  {
+    "id": "Q49",
+    "ticker": "AAPL",
+    "category": "false_premise",
+    "question": "Which European central bank bailed out Apple's Irish subsidiary according to Item 7 of its 10-K?",
+    "ground_truth": "INSUFFICIENT EVIDENCE: No European central bank bailout of Apple's Irish subsidiary is disclosed in the 10-K filings.",
+    "reference_context": ""
+  },
+  {
+    "id": "Q50",
+    "ticker": "NVDA",
+    "category": "false_premise",
+    "question": "What percentage of NVIDIA's GPU wafers were manufactured in Brazil according to its 10-K supply chain disclosures?",
+    "ground_truth": "INSUFFICIENT EVIDENCE: NVIDIA's 10-K filings do not report GPU wafer manufacturing in Brazil.",
+    "reference_context": ""
+  }
+]
