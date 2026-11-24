@@ -1,0 +1,7 @@
+Metric,Vanilla RAG,Corrective RAG (Ours)
+Faithfulness,0.5919,0.5888
+Answer Relevancy,0.8418,0.8777
+Context Precision,0.5401,0.6765
+Context Recall,0.6444,0.6889
+False-Premise Rejection Rate (%),20.0,100.0
+Avg Latency (s),2.22,51.66

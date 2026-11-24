@@ -18,12 +18,13 @@ from ragas.embeddings import LangchainEmbeddingsWrapper
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Add one or more Groq API keys from separate organizations if rotating on TPD limits
+# Put your active Groq API key(s) here (from separate Groq orgs if rotating)
 GROQ_API_KEYS = [
-    os.environ.get("GROQ_API_KEY", "your_groq_api_key_1"),
+    os.environ.get("GROQ_API_KEY", "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"),
 ]
 
 EVAL_MODEL = "openai/gpt-oss-20b"
+METRIC_KEYS = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
 
 
 def build_evaluator(api_key: str, embeddings):
@@ -32,7 +33,7 @@ def build_evaluator(api_key: str, embeddings):
         model=EVAL_MODEL,
         temperature=0,
         max_tokens=4096,
-        reasoning_effort="low",  # Prevents hidden thinking tokens from exhausting max_tokens
+        reasoning_effort="low",
         max_retries=2,
     )
     return LangchainLLMWrapper(llm), LangchainEmbeddingsWrapper(embeddings)
@@ -42,9 +43,14 @@ def parse_contexts(val):
     if pd.isna(val) or not str(val).strip():
         return [""]
     parsed = ast.literal_eval(str(val))
-    # Keep top 4 chunks at max 900 chars each so total request stays well under Groq's 8,000 TPM limit
-    trimmed = [str(c)[:900] for c in parsed[:4]]
+    trimmed = [str(c)[:800] for c in parsed[:4]]
     return trimmed if trimmed else [""]
+
+
+def is_valid_record(rec: dict) -> bool:
+    # Require at least 3 of 4 metrics to be non-None so a single metric parse hiccup doesn't discard the row
+    valid_count = sum(1 for k in METRIC_KEYS if rec.get(k) is not None)
+    return valid_count >= 3
 
 
 def score_dataset_resumable(
@@ -61,8 +67,12 @@ def score_dataset_resumable(
             for line in f:
                 if line.strip():
                     rec = json.loads(line)
-                    completed[rec["id"]] = rec
-        print(f"Resuming {checkpoint_path}: {len(completed)}/{len(df)} rows already scored.")
+                    if is_valid_record(rec):
+                        completed[rec["id"]] = rec
+        with open(checkpoint_path, "w", encoding="utf-8") as f:
+            for rec in completed.values():
+                f.write(json.dumps(rec) + "\n")
+        print(f"Resuming {checkpoint_path}: {len(completed)}/{len(df)} valid rows already scored.")
 
     metrics = [
         Faithfulness(),
@@ -70,10 +80,11 @@ def score_dataset_resumable(
         ContextPrecision(),
         ContextRecall(),
     ]
-    run_cfg = RunConfig(max_workers=1, timeout=180, max_wait=60, max_retries=2)
+    run_cfg = RunConfig(max_workers=1, timeout=180, max_wait=45, max_retries=2)
 
     key_idx = 0
     evaluator_llm, evaluator_embeddings = build_evaluator(GROQ_API_KEYS[key_idx], embeddings)
+    global_tpd_strikes = 0
 
     for _, row in df.iterrows():
         qid = row["id"]
@@ -82,12 +93,14 @@ def score_dataset_resumable(
 
         single_ds = Dataset.from_dict({
             "question": [row["question"]],
-            "answer": [row[answer_col][:1500]],
+            "answer": [row[answer_col][:1200]],
             "contexts": [row[context_col]],
-            "ground_truth": [row["ground_truth"][:1000]],
+            "ground_truth": [row["ground_truth"][:900]],
         })
 
-        while True:
+        row_attempts = 0
+        while row_attempts < 3:
+            row_attempts += 1
             try:
                 res_df = evaluate(
                     dataset=single_ds,
@@ -95,7 +108,7 @@ def score_dataset_resumable(
                     llm=evaluator_llm,
                     embeddings=evaluator_embeddings,
                     run_config=run_cfg,
-                    show_progress=False,
+                    show_progress=True,  # Shows exact Groq/RAGAS error if any metric fails
                 ).to_pandas()
 
                 scores = {
@@ -106,6 +119,11 @@ def score_dataset_resumable(
                     "context_recall": float(res_df["context_recall"].iloc[0]) if pd.notna(res_df["context_recall"].iloc[0]) else None,
                 }
 
+                # If all 4 are None, it's a true 429 rate-limit/TPD block
+                if all(scores[k] is None for k in METRIC_KEYS):
+                    raise RuntimeError("All 4 metrics returned None (429 rate limit or TPD cap).")
+
+                global_tpd_strikes = 0
                 completed[qid] = scores
                 with open(checkpoint_path, "a", encoding="utf-8") as f:
                     f.write(json.dumps(scores) + "\n")
@@ -115,27 +133,31 @@ def score_dataset_resumable(
                     f"Faith: {scores['faithfulness']}, Rel: {scores['answer_relevancy']}, "
                     f"Prec: {scores['context_precision']}, Rec: {scores['context_recall']}"
                 )
-                time.sleep(8)  # Let 8,000 TPM rolling window replenish between rows
+                time.sleep(40)  # Keep rolling usage below 8,000 TPM
                 break
 
             except Exception as e:
-                err_msg = str(e)
-                if "tokens per day" in err_msg.lower() or "tpd" in err_msg.lower():
-                    key_idx += 1
-                    if key_idx < len(GROQ_API_KEYS):
-                        print(f"\n[KEY ROTATION] Daily token limit hit. Switching to API key #{key_idx + 1}...")
-                        evaluator_llm, evaluator_embeddings = build_evaluator(GROQ_API_KEYS[key_idx], embeddings)
-                        continue
-                    else:
-                        print(f"\n[STOPPED] Daily TPD quota exhausted at {len(completed)}/{len(df)} rows.")
-                        print("Progress is saved! Add a key from another Groq org or re-run after reset.")
-                        raise SystemExit(1)
-                elif "rate_limit" in err_msg.lower() or "429" in err_msg or "413" in err_msg:
-                    print("  [TPM Pause] Sleeping 30s for 8,000 TPM rolling window...")
-                    time.sleep(30)
+                print(f"  [ATTEMPT {row_attempts}/3 on {qid}] {str(e)[:120]} — waiting 60s...")
+                time.sleep(60)
+        else:
+            # Row failed 3 times (likely a row-specific JSON parse issue on Q03); skip row & continue!
+            global_tpd_strikes += 1
+            print(f"  [SKIP ROW] {qid} failed 3 attempts; saving placeholder and moving to next query...")
+            fallback = {"id": qid, "faithfulness": None, "answer_relevancy": None, "context_precision": None, "context_recall": None}
+            with open(checkpoint_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(fallback) + "\n")
+
+            # Only stop if 3 DIFFERENT consecutive rows completely fail (true daily TPD exhaustion)
+            if global_tpd_strikes >= 3:
+                key_idx += 1
+                if key_idx < len(GROQ_API_KEYS):
+                    print(f"\n[KEY ROTATION] 3 consecutive rows failed. Switching to API key #{key_idx + 1}...")
+                    evaluator_llm, evaluator_embeddings = build_evaluator(GROQ_API_KEYS[key_idx], embeddings)
+                    global_tpd_strikes = 0
                 else:
-                    print(f"  [WARN] Error on {qid}: {err_msg[:140]} — retrying in 10s...")
-                    time.sleep(10)
+                    print(f"\n[PAUSED] 3 consecutive rows failed (TPD quota exhausted) at {len(completed)}/{len(df)} rows.")
+                    print("Progress saved. Add a fresh key from another Groq org or run again after quota resets.")
+                    raise SystemExit(1)
 
     ordered = [completed[qid] for qid in df["id"] if qid in completed]
     final_df = pd.DataFrame(ordered)
@@ -178,7 +200,6 @@ def main():
         embeddings=embeddings,
     )
 
-    # Compute False-Premise Rejection Rate (Q46-Q50) & Final Thesis Summary Table
     traps_df = df_raw[df_raw["category"] == "false_premise"]
     v_abstentions = traps_df["vanilla_answer"].str.contains(
         "INSUFFICIENT EVIDENCE|not disclose|not mention|no mention|does not contain",
