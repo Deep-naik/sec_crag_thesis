@@ -48,10 +48,10 @@ def test_filing_metadata_reads_dei_and_sec_submission_header(tmp_path):
         encoding="utf-8"
     )
     (filing_dir/"full-submission.txt").write_text(
-        "ACCESSION NUMBER: 0000320193-26-000026\\n"
-        "CONFORMED PERIOD OF REPORT: 20260926\\n"
-        "FILED AS OF DATE: 20261103\\n"
-        "FILER:\\n COMPANY DATA:\\n CENTRAL INDEX KEY: 0000320193\\n"
+        "ACCESSION NUMBER: 0000320193-26-000026\n"
+        "CONFORMED PERIOD OF REPORT: 20260926\n"
+        "FILED AS OF DATE: 20261103\n"
+        "FILER:\n COMPANY DATA:\n CENTRAL INDEX KEY: 0000320193\n"
         "</SEC-HEADER>",
         encoding="utf-8"
     )
