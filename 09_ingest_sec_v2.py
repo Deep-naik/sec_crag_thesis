@@ -63,34 +63,102 @@ def extract_inline_facts(soup, filing, source):
         facts.append({**filing,"fact_id":f"{filing['accession_number']}:{i}","concept":name,"value":value,"raw_value":raw,"unit":units.get(uref,uref),"unit_ref":uref,"scale":scale,"decimals":node.get("decimals"),"context_ref":cref,"context":contexts.get(cref,{}),"source_file":source,"source_location":f"inline_fact_ordinal:{i}","format":node.get("format")})
     return facts
 
+def inline_fact_by_name(soup, concept):
+    """Return the first Inline XBRL fact with an exact name attribute."""
+    wanted=concept.lower()
+    for node in soup.find_all(lambda t:isinstance(t,Tag) and t.get("name")):
+        if node.get("name","").lower()==wanted:
+            return clean(node.get_text(" ",strip=True))
+    return None
+
+def iso_date(value):
+    """Normalize common SEC/DEI date representations to YYYY-MM-DD."""
+    value=clean(value).replace("\u00a0"," ")
+    if not value:
+        return None
+    m=re.search(r"^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$",value)
+    if m:
+        return f"{int(m.group(1)):04d}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+    m=re.search(r"^([A-Za-z]+)\s+(\d{1,2})\s*,?\s*(\d{4})$",value)
+    if m:
+        from datetime import datetime
+        try:
+            return datetime.strptime(f"{m.group(1)} {m.group(2)} {m.group(3)}","%B %d %Y").date().isoformat()
+        except ValueError:
+            return value
+    return value
+
+def sec_submission_header(path):
+    """Read filing metadata from the companion SEC full-submission.txt header."""
+    submission=path.parent/"full-submission.txt"
+    if not submission.exists():
+        return {}
+    text=submission.read_text(encoding="utf-8",errors="replace")
+    header=text.split("</SEC-HEADER>",1)[0]
+    result={}
+    for key,pattern in {
+        "filing_date":r"FILED AS OF DATE:\s*(\d{8})",
+        "fiscal_period_end":r"CONFORMED PERIOD OF REPORT:\s*(\d{8})",
+        "cik":r"CENTRAL INDEX KEY:\s*(\d{1,10})",
+    }.items():
+        m=re.search(pattern,header,re.I)
+        if m:
+            raw=m.group(1)
+            result[key]=f"{raw[:4]}-{raw[4:6]}-{raw[6:]}" if key!="cik" else raw.zfill(10)
+    return result
+
 def filing_metadata(path,soup):
     ticker=next((p.upper() for p in path.parts if p.upper() in TICKERS),"UNKNOWN")
     accession=next((p for p in path.parts if re.fullmatch(r"\d{10}-\d{2}-\d{6}",p)),"")
-    cik_node=suffix(soup,("entitycentralindexkey",))
-    filing_node=suffix(soup,("filingdate",)); period_node=suffix(soup,("documentperiodenddate",))
-    text=soup.get_text(" ",strip=True)
-    if not filing_node:
-        m=re.search(r"FILED AS OF DATE:\s*(\d{8})",text,re.I); filed=f"{m.group(1)[:4]}-{m.group(1)[4:6]}-{m.group(1)[6:]}" if m else None
-    else: filed=clean(filing_node.get_text())
-    if period_node: period=clean(period_node.get_text())
-    else:
-        m=re.search(r"CONFORMED PERIOD OF REPORT\s+(\d{8})",text,re.I); period=f"{m.group(1)[:4]}-{m.group(1)[4:6]}-{m.group(1)[6:]}" if m else None
-    return {"ticker":ticker,"issuer":{"AAPL":"Apple Inc.","MSFT":"Microsoft Corporation","NVDA":"NVIDIA Corporation"}.get(ticker,ticker),"cik":clean(cik_node.get_text()) if cik_node else (accession.split("-")[0] if accession else None),"accession_number":accession or None,"filing_date":filed,"fiscal_period_end":period,"source_file":str(path)}
+    # DEI facts are ix:nonNumeric elements; the concept is stored in the name attribute.
+    cik=inline_fact_by_name(soup,"dei:EntityCentralIndexKey")
+    period=iso_date(inline_fact_by_name(soup,"dei:DocumentPeriodEndDate"))
+    header=sec_submission_header(path)
+    cik=cik or header.get("cik")
+    filed=header.get("filing_date")
+    period=period or header.get("fiscal_period_end")
+    return {"ticker":ticker,"issuer":{"AAPL":"Apple Inc.","MSFT":"Microsoft Corporation","NVDA":"NVIDIA Corporation"}.get(ticker,ticker),"cik":cik or None,"accession_number":accession or None,"filing_date":filed,"fiscal_period_end":period,"source_file":str(path)}
 
 def primary_html_files():
     if not DATA_ROOT.exists(): raise FileNotFoundError(DATA_ROOT)
     return sorted(DATA_ROOT.glob("*/10-K/*/primary-document.html"))
 
 def extract_item_sections(soup):
-    text=clean(soup.get_text(" ",strip=True))
-    pat=re.compile(r"(?i)\bITEM\s+(1A|1|7|8)\s*[.\-–—:]?\s*(?:RISK FACTORS|BUSINESS|MANAGEMENT['’]?S DISCUSSION AND ANALYSIS|FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA)?")
-    matches=list(pat.finditer(text)); found={}
-    for i,m in enumerate(matches):
-        item=m.group(1).upper()
-        if item not in ITEMS or item in found: continue
-        end=matches[i+1].start() if i+1<len(matches) else len(text)
-        body=text[m.start():end].strip()
-        if len(body)>30: found[item]=body
+    """Extract target Items from body-level heading blocks, excluding the TOC.
+
+    SEC filings commonly place the table of contents inside tables while actual
+    Item headings are direct children of body. Collect sibling blocks until the
+    next actual Item heading, retaining tables and Inline XBRL text in between.
+    """
+    body=soup.body
+    if body is None:
+        return {}
+    item_heading=re.compile(r"^\s*item\s+(\d+[a-z]?)\s*[.\-–—:]?\s*.*$",re.I)
+    blocks=[]
+    for child in body.find_all(recursive=False):
+        if not isinstance(child,Tag):
+            continue
+        heading_text=clean(child.get_text(" ",strip=True))
+        match=item_heading.match(heading_text)
+        if match and len(heading_text)<=300:
+            blocks.append((child,match.group(1).upper(),heading_text))
+    found={}
+    for heading,item,heading_text in blocks:
+        if item not in ITEMS or item in found:
+            continue
+        pieces=[heading_text]
+        for sibling in heading.find_next_siblings():
+            if not isinstance(sibling,Tag):
+                continue
+            sibling_text=clean(sibling.get_text(" ",strip=True))
+            next_heading=item_heading.match(sibling_text)
+            if next_heading and len(sibling_text)<=300:
+                break
+            if sibling_text:
+                pieces.append(sibling_text)
+        content=clean(" ".join(pieces))
+        if len(content)>30:
+            found[item]=content
     return found
 
 def main():
@@ -122,7 +190,7 @@ def main():
     embeddings=HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
     if narratives: Chroma.from_documents(narratives,embeddings,collection_name=NARRATIVE_COLLECTION,persist_directory=str(VECTOR_DIR))
     if fact_docs: Chroma.from_documents(fact_docs,embeddings,collection_name=FACT_COLLECTION,persist_directory=str(VECTOR_DIR))
-    summary={"filings":len(manifest),"narrative_chunks":len(narratives),"inline_xbrl_facts":len(facts),"fact_documents":len(fact_docs),"source_files_unchanged":True,"collections":[NARRATIVE_COLLECTION,FACT_COLLECTION],"warning":"Review blank dates and section boundaries; this lightweight parser is not a complete iXBRL conformance processor."}
+    summary={"filings":len(manifest),"narrative_chunks":len(narratives),"inline_xbrl_facts":len(facts),"fact_documents":len(fact_docs),"source_files_unchanged":True,"collections":[NARRATIVE_COLLECTION,FACT_COLLECTION],"warning":"Validate section extraction across all issuers and filing years; this lightweight parser is not a complete iXBRL conformance processor."}
     (OUTPUT/"ingestion_summary.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
     print(json.dumps(summary,indent=2))
 
