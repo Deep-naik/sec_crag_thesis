@@ -9,14 +9,19 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Import your compiled Phase 3 CRAG graph
 crag_module = import_module("crag_agent")
 crag_app = crag_module.crag_app
 
 # Set your Groq API key (or ensure it's exported in your shell)
-if "GROQ_API_KEY" not in os.environ:
-    os.environ["GROQ_API_KEY"] = "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"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
+    raise ValueError("GROQ_API_KEY not found in .env file")
 
 # 1. Initialize Embeddings, Vector Store & Rate-Limit-Safe Generator LLM
 embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")

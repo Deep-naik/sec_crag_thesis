@@ -8,9 +8,15 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set your active Groq API key
-os.environ["GROQ_API_KEY"] = "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"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
+    raise ValueError("GROQ_API_KEY not found in .env file")
 
 embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 vector_db = Chroma(persist_directory="./chroma_baseline_db", embedding_function=embeddings)

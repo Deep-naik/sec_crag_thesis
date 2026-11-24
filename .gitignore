@@ -1,21 +1,60 @@
-# Python
-__pycache__/
-*.pyc
+# ==============================
+# Environment variables & secrets
+# ==============================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ==============================
+# Python virtual environments
+# ==============================
 .venv/
 venv/
+env/
 
-# Environment
-.env
+# ==============================
+# Python cache files
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Cache and temporary files
-.cache/
-*.log
-*.tmp
+# ==============================
+# Jupyter Notebook
+# ==============================
+.ipynb_checkpoints/
 
-# Editors
+# ==============================
+# IDE settings
+# ==============================
 .vscode/
 .idea/
 
-# OS
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+
+# ==============================
+# Local databases and vector stores
+# ==============================
+chroma_baseline_db/
+chroma_crag_db/
+*.sqlite
+*.sqlite3
+*.db
+
+# ==============================
+# Downloaded SEC filing data
+# ==============================
+sec_data/
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.bak
 .DS_Store
-Thumbs.db

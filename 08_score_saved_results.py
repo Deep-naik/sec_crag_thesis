@@ -15,13 +15,21 @@ from ragas.run_config import RunConfig
 from ragas.metrics import Faithfulness, AnswerRelevancy, ContextPrecision, ContextRecall
 from ragas.llms import LangchainLLMWrapper
 from ragas.embeddings import LangchainEmbeddingsWrapper
+from dotenv import load_dotenv
+
+load_dotenv()
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Put your active Groq API key(s) here (from separate Groq orgs if rotating)
 GROQ_API_KEYS = [
-    os.environ.get("GROQ_API_KEY", "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"),
+    os.getenv("GROQ_API_KEY")
 ]
+
+GROQ_API_KEYS = [key for key in GROQ_API_KEYS if key]
+
+if not GROQ_API_KEYS:
+    raise ValueError("No Groq API key found in .env file")
 
 EVAL_MODEL = "openai/gpt-oss-20b"
 METRIC_KEYS = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
