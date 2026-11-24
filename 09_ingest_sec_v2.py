@@ -124,11 +124,12 @@ def primary_html_files():
     return sorted(DATA_ROOT.glob("*/10-K/*/primary-document.html"))
 
 def extract_item_sections(soup):
-    """Extract target Items from body-level heading blocks, excluding the TOC.
+    """Extract target Items from body-level heading divs, excluding TOC tables.
 
-    SEC filings commonly place the table of contents inside tables while actual
-    Item headings are direct children of body. Collect sibling blocks until the
-    next actual Item heading, retaining tables and Inline XBRL text in between.
+    In the SEC Workiva filings inspected, actual Item headings are direct
+    children of body and are represented by div elements. The table of
+    contents is also a body child, but is a table and must not be considered
+    a section heading.
     """
     body=soup.body
     if body is None:
@@ -136,7 +137,7 @@ def extract_item_sections(soup):
     item_heading=re.compile(r"^\s*item\s+(\d+[a-z]?)\s*[.\-–—:]?\s*.*$",re.I)
     blocks=[]
     for child in body.find_all(recursive=False):
-        if not isinstance(child,Tag):
+        if not isinstance(child,Tag) or child.name.lower()!="div":
             continue
         heading_text=clean(child.get_text(" ",strip=True))
         match=item_heading.match(heading_text)
@@ -152,7 +153,7 @@ def extract_item_sections(soup):
                 continue
             sibling_text=clean(sibling.get_text(" ",strip=True))
             next_heading=item_heading.match(sibling_text)
-            if next_heading and len(sibling_text)<=300:
+            if sibling.name.lower()=="div" and next_heading and len(sibling_text)<=300:
                 break
             if sibling_text:
                 pieces.append(sibling_text)
