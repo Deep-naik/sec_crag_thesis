@@ -90,7 +90,7 @@ def extract_item_sections(soup):
         if item not in ITEMS or item in found: continue
         end=matches[i+1].start() if i+1<len(matches) else len(text)
         body=text[m.start():end].strip()
-        if len(body)>150: found[item]=body
+        if len(body)>30: found[item]=body
     return found
 
 def main():
