@@ -1,0 +1,23 @@
+{
+  "total_questions": 50,
+  "answerable_questions": 45,
+  "status_counts": {
+    "FULL_EXACT_UNIQUE": 36,
+    "FULL_EXACT_MULTIPLE": 8,
+    "PREFIX_ONLY_UNIQUE": 1,
+    "UNANSWERABLE_TRAP": 5
+  },
+  "full_reference_matches": 44,
+  "unique_full_reference_matches": 36,
+  "multiple_full_reference_matches": 8,
+  "prefix_only_questions": [
+    "Q18"
+  ],
+  "unanswerable_traps": [
+    "Q46",
+    "Q47",
+    "Q48",
+    "Q49",
+    "Q50"
+  ]
+}

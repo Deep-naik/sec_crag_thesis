@@ -1,0 +1,12 @@
+{
+  "filings": 9,
+  "narrative_chunks": 1157,
+  "inline_xbrl_facts": 13163,
+  "fact_documents": 13163,
+  "source_files_unchanged": true,
+  "collections": [
+    "sec_narrative_v2",
+    "sec_xbrl_facts_v2"
+  ],
+  "warning": "Validate section extraction across all issuers and filing years; this lightweight parser is not a complete iXBRL conformance processor."
+}

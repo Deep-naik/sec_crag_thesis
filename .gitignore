@@ -58,3 +58,23 @@ sec_data/
 *.tmp
 *.bak
 .DS_Store
+
+# ==============================
+# Additional Python testing files
+# ==============================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# Generated ChromaDB v2 database
+# ==============================
+chroma_sec_v2/
+
+# ==============================
+# Generated temporary files
+# ==============================
+*.pyc
+*.pyo
+*.swp
+*.swo
